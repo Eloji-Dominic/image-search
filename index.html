@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Search Engine</title>
+  <meta name="title" content="Image Search Engine - Search for any pictures in the world">
+  <meta name="description" content="Image Search Engine made by Eloji Dominic">
+  <link rel="shortcut icon" href="./image-icon.png" type="image/svg+xml">
 
   <style>
     *{
@@ -17,21 +20,34 @@
       color: #fff;
     }
     h1{
-      margin-top: 50px;
-      text-align: center;
+      margin: 50px auto;
+      max-width: 600px;
+      /* text-align: center; */
+    }
+    .parent{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px;
     }
     form{
-      margin-top: 34px;
-      margin-left: 34%;
+      /* margin: 80px auto; */
+      height: 80px;
+      width: 90%;
+      max-width: 600px;
+      background: #434989;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
     }
     form input{
       outline: 0;
       background: #434989;
-      height: 55px;
-      width: 350px;
+      height: 100%;
+      flex: 1;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
-      border: none;
+      border: 0;
       padding: 0 20px;
       color: #fff;
       font-size: 18px;
@@ -42,17 +58,15 @@
       color: #fff;
     }
     form button{
-      padding: 12px;
+      padding: 0 40px;
       border: none;
       background: #ff3929;
-      height: 55px;
-      width: 100px;
+      height: 100%;
       color: #fff;
       font-size: 18px;
       font-weight: 500;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
-      margin-left: -6px;
       cursor: pointer;
     }
     #show-more-btn{
@@ -81,15 +95,82 @@
       object-fit: cover;
       border-radius: 6px; 
     }
+    @media (max-width: 900px){
+       #search-result{
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        padding: 10px;
+      }
+      #search-result img{
+        width: 100%;
+        background-size: cover;
+      }
+    }
+    @media (max-width: 600px){
+       #search-result{
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        padding: 10px;
+      }
+      #search-result img{
+        width: 100%;
+        background-size: cover;
+      }
+    }
+    @media (max-width: 500px){
+      .parent{
+        width: 100%;
+      }
+      h1{
+        font-size: 24px;
+        margin: 40px auto;
+      }
+      form{
+        width: 80%;
+        height: 80px;
+        margin-inline-end: auto;
+      }
+      #search-result{
+        grid-template-columns: 1.5fr;
+        width: 100%;
+        padding: 8px;
+      }
+      #search-result img{
+        width: 100%;
+        background-size: cover;
+      }
+
+    }
+    @media (max-width: 400px){
+      form{
+        width: 40%;
+        height: 70px;
+      }
+      .parent{
+        padding: 2px;
+      }
+      #search-result{
+        grid-template-columns: 0.8fr;
+        width: 100%;
+        padding: 5px;
+      }
+      #search-result img{
+        width: 100%;
+        background-size: cover;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Image Search Engine</h1>
-
-  <form id="search-form">
-    <input type="text" id="search-box" placeholder="Search">
-    <button>Search</button>
-  </form>
+  
+  <div class="parent">
+    <h1>Image Search Engine</h1>
+    <form id="search-form">
+      <input type="text" id="search-box" placeholder="Search">
+      <button>Search</button>
+    </form>
+  </div>
+ 
 
   <div id="search-result"></div>
   <button id="show-more-btn">Show more</button>
@@ -101,6 +182,7 @@
     const searchBox = document.getElementById("search-box");
     const searchResult = document.getElementById("search-result");
     const showMoreBtn = document.getElementById("show-more-btn");
+    const errorMessage = document.querySelector(".error-message");
 
     let keyword = "";
     let page = 1;
@@ -146,5 +228,4 @@
     })
   </script>
 </body>
-
 </html>

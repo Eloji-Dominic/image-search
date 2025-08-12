@@ -52,12 +52,6 @@
       font-weight: 500;
       cursor: pointer;
     }
-    form input::placeholder{
-      color: #fff;
-    }
-    form input::placeholder:is(:focus, :hover){
-      opacity: 0;
-    }
     form button{
       padding: 0 40px;
       border: none;
@@ -167,7 +161,7 @@
   <div class="parent">
     <h1>Image Search Engine</h1>
     <form id="search-form">
-      <input type="text" id="search-box" placeholder="Search">
+      <input type="text" id="search-box">
       <button>Search</button>
     </form>
   </div>
@@ -232,6 +226,7 @@
   </script>
 </body>
 </html>
+
 
 
 

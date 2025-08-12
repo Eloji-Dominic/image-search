@@ -117,7 +117,7 @@
         background-size: cover;
       }
     }
-    @media (max-width: 500px){
+    @media (max-width: 520px){
       .parent{
         width: 100%;
       }
@@ -127,8 +127,21 @@
       }
       form{
         width: 80%;
-        height: 80px;
-        margin-inline-end: auto;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+      }
+      form input{
+        height: 50%;
+        width: 100%;
+      }
+      form input::placeholder{
+        text-align: center;
+        margin-block-start: 20px;
+      }
+      form button{
+        height: 100%;
+        width: 100%;
       }
       #search-result{
         grid-template-columns: 1.5fr;
@@ -136,6 +149,7 @@
         padding: 8px;
       }
       #search-result img{
+        width: 100%;
         background-size: cover;
       }
 
@@ -228,6 +242,7 @@
   </script>
 </body>
 </html>
+
 
 
 

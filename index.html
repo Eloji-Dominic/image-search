@@ -125,6 +125,18 @@
         font-size: 24px;
         margin: 40px auto;
       }
+      #search-result{
+        grid-template-columns: 1.5fr;
+        width: 100%;
+        padding: 8px;
+      }
+      #search-result img{
+        width: 100%;
+        background-size: cover;
+      }
+
+    }
+    @media (max-width: 400px){
       form{
         width: 80%;
         height: 150px;
@@ -142,22 +154,6 @@
       form button{
         height: 100%;
         width: 100%;
-      }
-      #search-result{
-        grid-template-columns: 1.5fr;
-        width: 100%;
-        padding: 8px;
-      }
-      #search-result img{
-        width: 100%;
-        background-size: cover;
-      }
-
-    }
-    @media (max-width: 400px){
-      form{
-        width: 40%;
-        height: 70px;
       }
       .parent{
         padding: 2px;
@@ -242,6 +238,7 @@
   </script>
 </body>
 </html>
+
 
 
 

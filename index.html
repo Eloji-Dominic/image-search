@@ -22,7 +22,6 @@
     h1{
       margin: 50px auto;
       max-width: 600px;
-      /* text-align: center; */
     }
     .parent{
       display: flex;
@@ -31,7 +30,6 @@
       padding: 50px;
     }
     form{
-      /* margin: 80px auto; */
       height: 80px;
       width: 90%;
       max-width: 600px;
@@ -78,65 +76,56 @@
       font-weight: 600;
       padding: 10px 20px;
       border-radius: 4px;
-      margin: 20px auto 50px;
       display: none;
       cursor: pointer;
+    }
+    .button-content{
+      text-align: center;
+      width: 100%;
+      margin: 40px 0;
     }
     #search-result{
       width: 100%;
       margin: 100px auto 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 40px; 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px; 
+      padding: 18px;
     }
     #search-result img{
-      width: 100%;
-      height: 230px;
+      max-width: 100%;
+      height: auto;
       object-fit: cover;
-      border-radius: 6px; 
+      border-radius: 8px; 
     }
-    @media (max-width: 900px){
+    @media (max-width: 992px){
        #search-result{
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: center;
         grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
-        padding: 10px;
+        gap: 18px;
+        padding: 20px;
       }
       #search-result img{
-        background-size: cover;
-        margin-inline: auto;
-      }
-    }
-    @media (max-width: 600px){
-       #search-result{
-        grid-template-columns: 1fr 1fr;
         width: 100%;
-        padding: 10px;
-        margin-inline: auto;
-      }
-      #search-result img{
-        background-size: cover;
       }
     }
-    @media (max-width: 520px){
+    @media (max-width: 550px){
       .parent{
         width: 100%;
       }
       h1{
-        font-size: 24px;
+        font-size: 20px;
         margin: 40px auto;
       }
       #search-result{
-        grid-template-columns: 1.5fr;
-        width: 100%;
-        padding: 8px;
-      }
-      #search-result img{
-        width: 100%;
-        background-size: cover;
-      }
-
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
     }
-    @media (max-width: 400px){
+    }
+    @media (max-width: 480px){
       form{
         width: 80%;
         height: 150px;
@@ -161,10 +150,10 @@
       #search-result{
         grid-template-columns: 0.8fr;
         width: 100%;
-        padding: 5px;
-        margin-inline: auto;
+        padding: 15px;
       }
       #search-result img{
+        width: 100%;
         background-size: cover;
       }
     }
@@ -182,8 +171,10 @@
  
 
   <div id="search-result"></div>
-  <button id="show-more-btn">Show more</button>
-
+  <div class="button-content">
+    <button id="show-more-btn">Show more</button>
+  </div>
+  
   <script>
     const accessKey = "dH6tIN0VavapmjnGcmx9kCMD1vMtuOu67jmKyGt8dkw";
 
@@ -238,6 +229,7 @@
   </script>
 </body>
 </html>
+
 
 
 
